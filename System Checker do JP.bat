@@ -63,8 +63,9 @@ for %%A in (
     endlocal
 )
 
+rem É necessário inserir o gmail que receberá o email no From e To e a senha é gerada pela google como senha de aplicação.
 rem Chama o PowerShell para enviar o e-mail com a codificação UTF-8
-PowerShell -Command "& {$From = 'joaovictorlisboaporcel4@gmail.com'; $To = 'joaovictorlisboaporcel4@gmail.com'; $Subject = 'Relatórios do Sistema - !DataFormatada!'; $Password = 'rhsa qrfw woac rlmh' | ConvertTo-SecureString -AsPlainText -Force; $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $From, $Password; $Body = Get-Content '..\relatorio_temp.txt' -Raw; Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -SmtpServer 'smtp.gmail.com' -Port 587 -UseSsl -Credential $Credential}"
+PowerShell -Command "& {$From = 'SEU@gmail.com'; $To = 'SEU@gmail.com'; $Subject = 'Relatórios do Sistema - !DataFormatada!'; $Password = 'aaaa aaaa aaaa aaaa' | ConvertTo-SecureString -AsPlainText -Force; $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $From, $Password; $Body = Get-Content '..\relatorio_temp.txt' -Raw; Send-MailMessage -From $From -To $To -Subject $Subject -Body $Body -SmtpServer 'smtp.gmail.com' -Port 587 -UseSsl -Credential $Credential}"
 
 rem Imprime uma mensagem de sucesso
 echo Relatórios enviados por e-mail com sucesso!
